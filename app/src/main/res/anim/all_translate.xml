@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--动画基础-->
+    <!--补间动画：补间动画可以执行一系列在View对象的内容进行简单的转换（位置，尺寸，旋转和透明度）-->
+    <!--支持代码模式和xml形式-->
+    <!--动画XML文件属于在res/anim/你的Android项目的目录。-->
+    <!--常用方法/xml属性对应-->
+    <!--android:duration/setDuration(long)：动画单次播放时间。-->
+    <!--android:fillAfter/setFillAfter(boolean)：动画是否保持播放结束位置。-->
+    <!--android:fillBefore/setFillBefore(boolean)：动画是否保持播放开始位置。-->
+    <!--android:interpolator/setInterpolator(Interpolator)：指定动画播放的速度曲线，不设定默认为匀速。-->
+    <!--android:repeatCount/setRepeatCount(int)：动画持续次数，如2，会播放三次。-->
+    <!--android:repeatMode/setRepeatMode(int)：动画播放模式。-->
+    <!--android:startOffset/setStartOffset(long)：动画延迟播放的时长，单位是毫秒。-->
+    <scale
+        android:duration="700"
+        android:fillAfter="false"
+        android:fromXScale="1.0"
+        android:fromYScale="1.0"
+        android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:toXScale="1.4"
+        android:toYScale="0.6" />
+    <set android:interpolator="@android:anim/decelerate_interpolator">
+        <scale
+            android:duration="400"
+            android:fillBefore="false"
+            android:fromXScale="1.4"
+            android:fromYScale="0.6"
+            android:pivotX="50%"
+            android:pivotY="50%"
+            android:startOffset="700"
+            android:toXScale="0.0"
+            android:toYScale="0.0" />
+        <rotate
+            android:duration="400"
+            android:fromDegrees="0"
+            android:pivotX="50%"
+            android:pivotY="50%"
+            android:startOffset="700"
+            android:toDegrees="-45"
+            android:toYScale="0.0" />
+    </set>
+
+    <!--调用-->
+    <!--Animation anim = AnimationUtils.loadAnimation(mContext, R.anim.anim);-->
+    <!--mView.startAnimation(hyperspaceJumpAnimation);-->
+</set>
